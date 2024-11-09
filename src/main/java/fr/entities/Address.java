@@ -22,6 +22,14 @@ public class Address {
 
     public Address() {}
 
+    public Address(String number, String street, String zipcode, String city, PetStore petStore) {
+        this.number = number;
+        this.street = street;
+        this.zipcode = zipcode;
+        this.city = city;
+        this.petStore = petStore;
+    }
+
     public Long getId() {
         return id;
     }

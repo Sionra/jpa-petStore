@@ -22,6 +22,11 @@ public class Animal implements Serializable {
 
     public Animal() {}
 
+    public Animal(String birth, String couleur) {
+        this.birth = birth;
+        this.couleur = couleur;
+    }
+
     public int getId() {
         return id;
     }
@@ -51,6 +56,10 @@ public class Animal implements Serializable {
     }
 
     public void setPetStore(PetStore petStore) {
+        this.petStore = petStore;
+    }
+
+    public void addPetStore(PetStore petStore) {
         this.petStore = petStore;
     }
 }

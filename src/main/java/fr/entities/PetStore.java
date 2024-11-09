@@ -3,6 +3,7 @@ package fr.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,7 +28,17 @@ public class PetStore implements Serializable {
     @OneToMany(mappedBy = "petStore")
     private List<Animal> animals;
 
-    public PetStore() {}
+    public PetStore() {
+        this.products = new ArrayList<Product>();
+        this.animals = new ArrayList<>();
+    }
+
+    public PetStore(String name, String managerName) {
+        this.name = name;
+        this.managerName = managerName;
+        this.products = new ArrayList<Product>();
+        this.animals = new ArrayList<>();
+    }
 
     public Long getId() {
         return id;

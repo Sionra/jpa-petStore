@@ -12,4 +12,16 @@ public class Fish extends Animal implements Serializable {
     private FishLivEnv livingEnv;
 
     public Fish() {}
+
+    public Fish(String birth, String couleur) {
+        super(birth, couleur);
+    }
+
+    public FishLivEnv getLivingEnv() {
+        return livingEnv;
+    }
+
+    public void setLivingEnv(FishLivEnv livingEnv) {
+        this.livingEnv = livingEnv;
+    }
 }

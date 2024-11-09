@@ -3,6 +3,7 @@ package fr.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,7 +24,17 @@ public class Product implements Serializable {
     @ManyToMany(mappedBy = "products")
     private List<PetStore> petStores;
 
-    public Product() {}
+    public Product() {
+        this.petStores = new ArrayList<PetStore>();
+    }
+
+    public Product(String code, String label, ProdType type, double price) {
+        this.code = code;
+        this.label = label;
+        this.type = type;
+        this.price = price;
+        this.petStores = new ArrayList<PetStore>();
+    }
 
     public Long getId() {
         return id;
@@ -71,5 +82,9 @@ public class Product implements Serializable {
 
     public void setPetStores(List<PetStore> petStores) {
         this.petStores = petStores;
+    }
+
+    public void addPetStore(PetStore petStore) {
+        this.petStores.add(petStore);
     }
 }
