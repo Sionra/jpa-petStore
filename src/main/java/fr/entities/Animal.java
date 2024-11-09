@@ -62,4 +62,14 @@ public class Animal implements Serializable {
     public void addPetStore(PetStore petStore) {
         this.petStore = petStore;
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Animal{ ");
+        sb.append("id = ").append(id);
+        sb.append(", birth = '").append(birth).append('\'');
+        sb.append(", couleur = '").append(couleur).append('\'');
+        sb.append(" }");
+        return sb.toString();
+    }
 }
